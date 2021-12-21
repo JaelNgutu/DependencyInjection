@@ -14,8 +14,8 @@ public class DependencyApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(DependencyApplication.class, args);
 		MyController myController = (MyController) context.getBean("myController"); //start bean name with small caps
-		String greeting = myController.sayHi();
-		System.out.println(greeting);
+		System.out.println("---primary bean");
+		System.out.println(myController.sayHi());
 
 		System.out.println("---property injection");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) context.getBean("propertyInjectedController");
